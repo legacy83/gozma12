@@ -13,9 +13,16 @@ gozma_system_update() {
 }
 
 gozma_system_locale() {
-    echo 'export LANGUAGE=en_US.UTF-8'
-    echo 'export LANG=en_US.UTF-8'
-    echo 'export LC_ALL=en_US.UTF-8'
+    apt-get -y install language-pack-en
+    echo "LANG=en_US.UTF-8" > /etc/default/locale
+    echo "LC_ALL=en_US.UTF-8" > /etc/default/locale
+
+#    export LANGUAGE=en_US.UTF-8
+#    export LANG=en_US.UTF-8
+#    export LC_ALL=en_US.UTF-8
+#    locale-gen en_US.UTF-8
+
+    dpkg-reconfigure locales
 }
 
 ###########################################################
@@ -24,6 +31,11 @@ gozma_system_locale() {
 
 gozma_apache2_install() {
     apt-get -y install apache2
+}
+
+gozma_apache2_configure() {
+    echo "ServerName localhost" > /etc/apache2/conf.d/name
+    a2enmod rewrite
 }
 
 ###########################################################
@@ -64,8 +76,10 @@ gozma_goodstuff_install() {
 # Bootstrap Functionality
 ###########################################################
 
+gozma_system_locale
 gozma_system_update
 gozma_apache2_install
+gozma_apache2_configure
 gozma_mysql_install
 gozma_postgresql_install
 gozma_php5_install
