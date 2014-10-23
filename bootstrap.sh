@@ -17,14 +17,13 @@ gozma_system_locale() {
     echo "LANG=en_US.UTF-8" > /etc/default/locale
     echo "LC_ALL=en_US.UTF-8" > /etc/default/locale
 
-#    export LANGUAGE=en_US.UTF-8
-#    export LANG=en_US.UTF-8
-#    export LC_ALL=en_US.UTF-8
-#    locale-gen en_US.UTF-8
-
     dpkg-reconfigure locales
 }
 
+gozma_system_timezone() {
+    echo "America/Sao_Paulo" > /etc/timezone
+    dpkg-reconfigure -f noninteractive tzdata
+}
 ###########################################################
 # Apache2
 ###########################################################
@@ -76,10 +75,13 @@ gozma_goodstuff_install() {
 # Bootstrap Functionality
 ###########################################################
 
-gozma_system_locale
 gozma_system_update
+gozma_system_locale
+gozma_system_timezone
+
 gozma_apache2_install
 gozma_apache2_configure
+
 gozma_mysql_install
 gozma_postgresql_install
 gozma_php5_install
