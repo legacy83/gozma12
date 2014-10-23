@@ -12,6 +12,12 @@ gozma_system_update() {
     apt-get -y upgrade
 }
 
+gozma_system_locale() {
+    echo 'export LANGUAGE=en_US.UTF-8'
+    echo 'export LANG=en_US.UTF-8'
+    echo 'export LC_ALL=en_US.UTF-8'
+}
+
 ###########################################################
 # Apache2
 ###########################################################
