@@ -112,6 +112,7 @@ gozma_fabric_install() {
 ###########################################################
 
 gozma_goodstuff_install() {
+    apt-get -y install sqlite
     apt-get -y install subversion git-core
     apt-get -y install imagemagick zip unzip ngrep colordiff
     apt-get -y install gettext graphviz dos2unix
