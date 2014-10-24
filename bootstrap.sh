@@ -121,9 +121,9 @@ gozma_goodstuff_install() {
 # Bootstrap Functionality
 ###########################################################
 
-#gozma_system_update
-#gozma_system_locale
-#gozma_system_timezone
+gozma_system_update
+gozma_system_locale
+gozma_system_timezone
 
 gozma_apache2_install
 gozma_apache2_configure
