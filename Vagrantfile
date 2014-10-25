@@ -5,4 +5,6 @@ Vagrant.configure("2") do |config|
 
   config.vm.network "private_network", ip: "192.168.27.12"
 
+  config.vm.provision "shell", path: "provision/core.sh"
+
 end
