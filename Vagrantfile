@@ -8,5 +8,6 @@ Vagrant.configure("2") do |config|
   config.vm.provision "shell", path: "provision/core.sh"
   config.vm.provision "shell", path: "provision/cloud.sh"
   config.vm.provision "shell", path: "provision/lamp.sh"
+  config.vm.provision "shell", path: "provision/lapp.sh"
 
 end
