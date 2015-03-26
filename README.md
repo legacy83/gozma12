@@ -1,4 +1,4 @@
-gozma12
+Gozma12
 =======
 
 Just one more precise64 vagrant box
