@@ -17,8 +17,8 @@ Included Recipes
 
 * PHP5 Environment
 * WordPress Environment
-..* WP-Cli
-..* WP I18N Tools
+  * WP-Cli
+  * WP I18N Tools
 * ZendServer Environment
 
 Cleanup
