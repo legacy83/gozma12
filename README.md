@@ -17,8 +17,8 @@ Included Recipes
 
 * PHP5 Environment
 * WordPress Environment
- * WP-Cli
- * WP I18N Tools
+  * WP-Cli
+  * WP I18N Tools
 * ZendServer Environment
 
 Cleanup
@@ -39,7 +39,7 @@ How to cleanup the box before packaging.
 Packaging & Install
 -------------------
 
-How to package your new provisioned box.
+A sample about how to package the new provisioned box.
 
     vagrant package
-    vagrant box add ddd2phpexperts/box package.box
+    vagrant box add gozma12/php5 package.box
