@@ -19,7 +19,10 @@
 
 - name: Grant Vagrant Ownership
   file:
-    dest: /var/www
+    dest: "{{ item }}"
     owner: vagrant
     group: vagrant
     recurse: yes
+  with_items:
+    - /var/www
+    - /var/lock/apache2
