@@ -18,5 +18,6 @@
     - php5-mcrypt
     - php5-mysqlnd
     - php-pear
+    - php5-pgsql
     - php5-sqlite
     - php5-xmlrpc
