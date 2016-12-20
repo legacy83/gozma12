@@ -1,6 +1,5 @@
 
 ---
 - include: mainEnvVars.yml
-- include: mainDatabases.yml
 - include: mainPublicHtml.yml
 - include: mainVirtualHosts.yml
