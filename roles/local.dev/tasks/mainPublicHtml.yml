@@ -16,6 +16,10 @@
     owner: vagrant
     group: vagrant
 
+- name: Check Public Html Status for WWW
+  stat: path=/var/www/www.gozma12.local/public_html
+  register: www_public_html
+
 - name: Public Html Directory (www only)
   copy:
     src: "public_html/www.gozma12.local/"
@@ -23,3 +27,4 @@
     force: no
     owner: vagrant
     group: vagrant
+  when: www_public_html.stat.islnk is not defined
