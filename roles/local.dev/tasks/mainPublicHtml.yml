@@ -24,7 +24,6 @@
   copy:
     src: "public_html/www.gozma12.local/"
     dest: /var/www/www.gozma12.local/public_html
-    force: no
     owner: vagrant
     group: vagrant
   when: www_public_html.stat.islnk is not defined
