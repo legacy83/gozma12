@@ -7,18 +7,14 @@
     state: directory
   with_items:
     - gozma12.local
-    - adminer.gozma12.local
     - www.gozma12.local
 
-- name: Public Html Directories
+- name: Public Html Directory
   copy:
-    src: "public_html/{{ item }}/"
-    dest: /var/www/{{ item }}/public_html
+    src: "public_html/gozma12.local/"
+    dest: /var/www/gozma12.local/public_html
     owner: vagrant
     group: vagrant
-  with_items:
-    - gozma12.local
-    - adminer.gozma12.local
 
 - name: Public Html Directory (www only)
   copy:

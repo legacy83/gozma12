@@ -1,4 +1,5 @@
 ---
 dependencies:
+  - { role: role.adminer }
   - { role: role.apache2 }
   - { role: role.php }
