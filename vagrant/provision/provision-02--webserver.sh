@@ -21,9 +21,9 @@ webserver_setup() {
 
   echo "<VirtualHost *:80>
     ServerName ${DOMAIN}
-    DocumentRoot /var/www/html
+    DocumentRoot /var/www
     AllowEncodedSlashes On
-    <Directory /var/www/html>
+    <Directory /var/www>
       Options +Indexes +FollowSymLinks
     	DirectoryIndex index.php index.html
     	Order allow,deny
@@ -32,7 +32,7 @@ webserver_setup() {
     </Directory>
     ErrorLog ${APACHE_LOG_DIR}/error.log
     CustomLog ${APACHE_LOG_DIR}/access.log combined
-  </VirtualHost>" > /etc/apache2/sites-available/000-default.conf
+  </VirtualHost>" > /etc/apache2/sites-available/default
 
   echo "ServerName localhost" > /etc/apache2/conf.d/name
 
