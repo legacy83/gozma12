@@ -1,5 +1,5 @@
 Vagrant.configure("2") do |config|
-  # Ubuntu 12.02 - Precise Pangolin
+  # Ubuntu 12.04 - Precise Pangolin
   config.vm.define "ubuntu12" do |ubuntu12|
     ubuntu12.vm.box = "bento/ubuntu-12.04"
     ubuntu12.vm.hostname = "gozma12"
@@ -11,7 +11,7 @@ Vagrant.configure("2") do |config|
     ubuntu12.vm.provision 'shell', path: './vagrant/provision/provision-04--extras.sh'
     ubuntu12.vm.provision 'shell', path: './vagrant/provision/provision-05--cleanup.sh'
     # synced folders
-    config.vm.synced_folder '.', '/vagrant', disabled: true
-    config.vm.synced_folder '~/PhpStorm__Projects', '/projects', owner: 'vagrant', group: 'vagrant'
+    ubuntu12.vm.synced_folder '.', '/vagrant', disabled: true
+    ubuntu12.vm.synced_folder '~/PhpStorm__Projects', '/projects', owner: 'vagrant', group: 'vagrant'
   end
 end
