@@ -40,7 +40,6 @@ webserver_setup() {
   sed -i "s/post_max_size = .*/post_max_size = 64M/" /etc/php5/apache2/php.ini
   sed -i "s/upload_max_filesize = .*/upload_max_filesize = 32M/" /etc/php5/apache2/php.ini
 
-
   a2enmod expires
   a2enmod headers
   a2enmod include
