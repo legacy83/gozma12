@@ -24,5 +24,4 @@ extras_ohmyzsh_install() {
 export DEBIAN_FRONTEND=noninteractive
 
 extras_composer_install
-extras_wpcli_install
 extras_ohmyzsh_install
