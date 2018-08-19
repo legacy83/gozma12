@@ -10,14 +10,6 @@ extras_composer_install() {
   fi
 }
 
-extras_wpcli_install() {
-  if [ ! -f "/usr/local/bin/wp" ]; then
-    curl -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
-    chmod +x wp-cli.phar
-    mv wp-cli.phar /usr/local/bin/wp
-  fi
-}
-
 extras_ohmyzsh_install() {
   if [ ! -d "/home/vagrant/.oh-my-zsh" ]; then
     git clone git://github.com/robbyrussell/oh-my-zsh.git /home/vagrant/.oh-my-zsh
