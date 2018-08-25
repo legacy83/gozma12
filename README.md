@@ -15,6 +15,8 @@ Included Software
 - Sqlite3
 - PostgreSQL
 - Composer
+- MailHog
+- mhsendmail
 - Oh My ZSH!
 
 
