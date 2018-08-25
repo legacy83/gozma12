@@ -12,29 +12,18 @@ extras_composer_install() {
 
 extras_mailhog_install() {
   if [ ! -f "/usr/local/bin/mailhog" ]; then
-    wget --quiet -O /usr/local/bin/mailhog https://github.com/mailhog/MailHog/releases/download/v1.0.0/MailHog_linux_amd64
-    chmod +x /usr/local/bin/mailhog
-  fi
-}
+    wget --quiet -O /usr/local/bin/mailhog \
+      https://github.com/mailhog/MailHog/releases/download/v1.0.0/MailHog_linux_amd64
 
-extras_mailhog_upstart() {
-  if [ ! -f "/etc/init/mailhog.conf" ]; then
-    sudo tee /etc/init/mailhog.conf <<EOL
-description "MailHog"
-start on runlevel [2345]
-stop on runlevel [!2345]
-respawn
-pre-start script
-    exec su - vagrant -c "/usr/bin/env /usr/local/bin/mailhog > /dev/null 2>&1 &"
-end script
-EOL
-    service mailhog start
+    chmod +x /usr/local/bin/mailhog
   fi
 }
 
 extras_mhsendmail_install() {
   if [ ! -f "/usr/local/bin/mhsendmail" ]; then
-    wget --quiet -O /usr/local/bin/mhsendmail https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64
+    wget --quiet -O /usr/local/bin/mhsendmail \
+      https://github.com/mailhog/mhsendmail/releases/download/v0.2.0/mhsendmail_linux_amd64
+      
     chmod +x /usr/local/bin/mhsendmail
   fi
 }
@@ -54,6 +43,5 @@ export DEBIAN_FRONTEND=noninteractive
 
 extras_composer_install
 extras_mailhog_install
-extras_mailhog_upstart
 extras_mhsendmail_install
 extras_ohmyzsh_install
